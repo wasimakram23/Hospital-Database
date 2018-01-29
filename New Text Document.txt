@@ -1,0 +1,99 @@
+import javax.swing.*;
+import javax.swing.border.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.sql.SQLException;
+
+ DSUB.setFont(new Font("Tahoma", 3, 14)); // NOI18N
+        DSUB.setText("SUBMIT");
+        DSUB.setToolTipText("Press for submit Doctor information");
+        DSUB.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                try {
+					DSUBActionPerformed(evt);
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					System.err.println(e);;
+				}
+            }
+        });
+
+ PSUB.setFont(new Font("Tahoma", 3, 14)); // NOI18N
+        PSUB.setText("SUBMIT");
+        PSUB.setToolTipText("Press for submit Patient information");
+        PSUB.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                try {
+					PSUBActionPerformed(evt);
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					System.err.println(e);
+				}
+            }
+        });
+
+
+private void AOKbActionPerformed(ActionEvent evt) {                                     
+        
+    }                                    
+
+    private void AGObActionPerformed(ActionEvent evt) {                                     
+        
+    }                                    
+
+    private void SOKbActionPerformed(ActionEvent evt) {                                     
+        
+    }                                    
+
+    private void MPRIbActionPerformed(ActionEvent evt) {                                      
+        
+    }                                     
+
+    private void PSUBActionPerformed(ActionEvent evt) throws SQLException {
+    	String n=Pntf.getText();
+    	//System.out.println(n+"\n");
+    	String fn=Pfntf.getText();
+    	String mn=Pmntf.getText();
+    	String ad=Padtf.getText();
+    	String ma=Pmatf.getText();
+    	String c=Pctf.getText();
+    	String bd=Pbdtf.getText();
+    	String a=Patf.getText();
+    	String ms=Pmstf.getText();
+    	String r=Prtf.getText();
+    	String id=Pidtf.getText();
+    	Databage d=new Databage();
+    	d.insertPI(n,fn,mn,ad,ma,c,bd,a,ms,r,id);
+        
+    }                                    
+
+    private void DSUBActionPerformed(ActionEvent evt) throws SQLException {  
+    	String id=Pidtf.getText();
+    	String dn=dntf.getText();
+    	String da=dtf.getText();
+    	String de=detf.getText();
+    	Databage d=new Databage();
+    	d.insertLOG(id,dn,da,de);
+    }                                    
+
+    private void editbActionPerformed(ActionEvent evt) {                                      
+    	Pntf.setText(null);
+    	Pfntf.setText(null);
+    	Pmntf.setText(null);
+    	Padtf.setText(null);
+    	Pmatf.setText(null);
+    	Pctf.setText(null);
+    	Pbdtf.setText(null);
+    	Patf.setText(null);
+    	Pmstf.setText(null);
+    	Prtf.setText(null);
+    	Pidtf.setText(null);
+    	dntf.setText(null);
+    	dtf.setText(null);
+    	detf.setText(null);
+    }                                     
+
+    private void okbActionPerformed(ActionEvent evt) {                                    
+        
+    }                                   
+
